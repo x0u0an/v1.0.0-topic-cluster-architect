@@ -230,11 +230,3 @@ If a file is saved, Claude should explicitly tell the user the path, for example
 ```text
 Saved report: C:\Users\name\project\topic-cluster-report-2026-04-12.md
 ```
-
-## Publishing notes for GitHub
-
-Recommended for release:
-- publish the folder contents exactly as the skill package source
-- include a screenshot or animated demo of the report output later if available
-- tag releases when the output format or workflow changes significantly
-- keep installation instructions near the top of the repository documentation for beginners
