@@ -1,7 +1,5 @@
 # `topic-cluster-architect`
 
-[English](README.md) · **中文**
-
 一个面向 `Claude Code` 的 SEO 内容策略 Skill。
 
 给定网站 URL、业务描述、竞品链接或现有内容清单后，它会先判断站点类型，再输出一份适合该站点商业模式的 `Topic Cluster` 策略报告，而不是只返回一堆分散的关键词。
