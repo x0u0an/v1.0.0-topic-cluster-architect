@@ -1,188 +1,102 @@
 # `topic-cluster-architect`
 
-A `Claude Code` skill for building site-specific SEO topic cluster strategies.
+[English](README.md) · **中文**
 
-It first identifies what type of website it is working with, then designs a cluster strategy that fits that business model instead of applying a generic SEO template.
+一个面向 `Claude Code` 的 SEO 内容策略 Skill。
 
-## What this skill does
+给定网站 URL、业务描述、竞品链接或现有内容清单后，它会先判断站点类型，再输出一份适合该站点商业模式的 `Topic Cluster` 策略报告，而不是只返回一堆分散的关键词。
 
-This skill helps users turn a website, business, or content problem into a structured strategy report.
+- 先识别网站 archetype，而不是套用通用 SEO 模板
+- 规划 `pillar pages`、支持内容、内链关系与执行优先级
+- 可结合竞品 URL 做 gap analysis
+- 可结合现有页面/文章清单做保留、扩展、合并、重定位建议
+- 对新站会补充更聚焦的增长打法
+- 输出可读性较强的结构化报告，适合直接讨论或继续落地
 
-It can:
-- diagnose the site's archetype
-- assess whether the site is new, early-stage, or established
-- state a confidence level when the diagnosis depends on partial evidence
-- estimate likely SEO impact and success conditions
-- identify the likely SEO growth objective
-- map the site's topic universe
-- design priority `pillar pages`, support content, and internal linking
-- optionally use competitor URLs for gap analysis
-- optionally use existing page or article inventories for keep / expand / consolidate decisions
-- add a focused new-site growth plan when relevant
-- generate a readable report with lists and tables
+## 快速安装
 
-## Who this is for
-
-This skill is useful for:
-- independent site owners
-- SaaS teams
-- ecommerce teams
-- agencies and consultants
-- SEO strategists
-- content leads
-- founders who do not know how to structure a content roadmap yet
-
-## What the user gets
-
-After running the skill, the user gets a report that usually includes:
-- an executive summary
-- site type diagnosis with a confidence level
-- site maturity and expected SEO impact
-- growth goal interpretation
-- topic universe breakdown
-- a cluster architecture table
-- optional competitor gap insights
-- optional existing content fit analysis
-- a new-site strategy when relevant
-- a phased execution roadmap
-
-
-## How the output is delivered
-
-The report is delivered in one of these ways:
-
-1. `Preview URL` if the current environment supports preview
-   - a temporary preview is generated for easier reading
-   - the preview is for viewing only unless the user asks to save it
-
-2. `Inline report in chat` if preview is not available
-   - the full report is shown directly in Claude Code
-
-3. `Saved Markdown file` only if the user explicitly says to save it
-   - default filename pattern: `topic-cluster-report-YYYY-MM-DD.md`
-   - Claude should return the exact saved path after writing the file
-
-Important:
-- the report is **not saved by default**
-- the user is asked whether they want to save it
-- if it is not saved, the preview should be treated as temporary
-
-## How to use in Claude Code
-
-### Invoke the skill directly
-
-In `Claude Code`, run:
-
-```text
-/topic-cluster-architect
+```bash
+npx skills add x0u0an/topic-cluster-architect-skill --skill topic-cluster-architect
 ```
 
-Then provide:
-- website URL
-- business description
-- target audience
-- business goal
-- optional competitor URLs
-- optional existing pages or article inventory
+如果你更希望用插件方式安装：
 
-## What users should prepare
-
-Minimum useful input:
-- website URL
-- one-sentence business description
-- target audience
-- main goal such as traffic, leads, demos, or sales
-
-Better input for stronger output:
-- 2-5 competitor URLs
-- existing service pages, category pages, or article list
-- target market or geography
-- known content problems or priorities
-
-## Skill architecture
-
-This skill uses a 10-part strategy flow:
-
-1. `Site archetype diagnosis`
-2. `Site maturity assessment`
-3. `Growth goal interpretation`
-4. `Topic universe mapping`
-5. `Competitor gap and content inventory analysis` when available
-6. `Cluster architecture design`
-7. `Site-type-specific strategic adjustment`
-8. `Expected SEO impact and success conditions`
-9. `New-site strategy` when relevant
-10. `Preview / save delivery flow`
-
-
-### Why this matters
-
-Most SEO content planning outputs fail because they:
-- treat all websites as if they need the same cluster model
-- return keyword lists without architecture
-- ignore business model differences
-- ignore existing content assets
-- do not produce something readable enough to use immediately
-
-This skill is designed to solve those problems.
-
-## Recommended GitHub repo structure
-
-If publishing this on GitHub, a clean structure is:
-
-```text
-topic-cluster-architect/
-├── SKILL.md
-├── README.md
-└── references/
-    ├── new-site-playbook.md
-    ├── output-template.md
-    ├── report-delivery.md
-    ├── site-archetypes.md
-    └── strategy-framework.md
-
+```bash
+/plugin marketplace add x0u0an/topic-cluster-architect-skill
+/plugin install topic-cluster-architect-skill
 ```
 
-## Install for Claude Code on Windows
+## 预览展示区
 
-### Install for all projects (`%USERPROFILE%\.claude\skills`)
+> 截图 / 演示占位区
+>
+> 你在 GitHub 仓库发布后，可以把实际截图或一个简短 GIF 放在这里，让整个仓库展示效果更接近公开发布的 Skill 页面。
 
-#### PowerShell
-Run this command from inside the `topic-cluster-architect` folder:
+建议放这些预览内容：
 
-```powershell
-New-Item -ItemType Directory -Force -Path "$Env:USERPROFILE\.claude\skills\topic-cluster-architect" | Out-Null; Copy-Item -Recurse -Force ".\*" "$Env:USERPROFILE\.claude\skills\topic-cluster-architect"
-```
+- 完整报告总览截图
+- cluster 架构表格截图
+- 竞品 gap analysis 截图
+- preview URL 或保存结果截图
 
-#### Command Prompt (`cmd`)
-Run this command from inside the `topic-cluster-architect` folder:
+## 这个 Skill 会产出什么
 
-```cmd
-if not exist "%USERPROFILE%\.claude\skills\topic-cluster-architect" mkdir "%USERPROFILE%\.claude\skills\topic-cluster-architect" && xcopy /E /I /Y ".\*" "%USERPROFILE%\.claude\skills\topic-cluster-architect"
-```
 
-### Install for current project only (`.claude\skills`)
+每次运行后，用户通常会得到一份结构化策略报告，内容一般包括：
 
-#### PowerShell
-Run this command from the project root where you want to use the skill:
+1. `Executive Summary`
+   - 对网站当前 SEO 内容机会的简要判断
+   - 当前最值得优先做的方向
 
-```powershell
-New-Item -ItemType Directory -Force -Path ".\.claude\skills\topic-cluster-architect" | Out-Null; Copy-Item -Recurse -Force "<PATH-TO-SKILL>\*" ".\.claude\skills\topic-cluster-architect"
-```
+2. `Site Diagnosis`
+   - 网站类型判断
+   - 主 archetype / 次 archetype
+   - 判断置信度
+   - 站点成熟度（新站 / 早期 / 已建立）
 
-#### Command Prompt (`cmd`)
-Run this command from the project root where you want to use the skill:
+3. `Growth Objective`
+   - 更偏需求承接、需求创造、主题权威建设，还是转化导向增长
 
-```cmd
-if not exist ".\.claude\skills\topic-cluster-architect" mkdir ".\.claude\skills\topic-cluster-architect" && xcopy /E /I /Y "<PATH-TO-SKILL>\*" ".\.claude\skills\topic-cluster-architect"
-```
+4. `Topic Universe`
+   - 商业主题
+   - 问题/解决方案主题
+   - use case 主题
+   - comparison / alternative 主题
+   - 教育型主题
+   - 信任建设主题
 
-Replace `<PATH-TO-SKILL>` with the folder path where this skill is stored locally.
+5. `Cluster Architecture`
+   - 重点 `pillar pages`
+   - 每个 cluster 的 supporting content
+   - 内链角色与结构建议
+   - 转化相关性
 
-## Copy-paste test prompts
+6. `Optional Analysis`
+   - 竞品主题缺口分析
+   - 现有内容适配分析
+   - 新站优先策略
 
-### Basic site diagnosis
-After installation, open `Claude Code` and try:
+7. `Execution Roadmap`
+   - Phase 1 / 2 / 3 执行顺序
+   - 先做什么、后做什么、哪些暂缓
+
+## 报告如何交付
+
+默认会按以下优先级交付结果：
+
+1. `Preview URL`
+   - 如果当前环境支持预览，会优先生成预览链接
+   - 便于阅读，但默认不自动保存
+
+2. `Chat Inline Report`
+   - 如果不能预览，就直接在对话里输出完整报告
+
+3. `Saved Markdown File`
+   - 只有当用户明确要求保存时，才会写入文件
+   - 默认文件名格式：`topic-cluster-report-YYYY-MM-DD.md`
+   - 保存后应返回明确文件路径
+
+示例：
 
 ```text
 Use topic-cluster-architect on https://example.com.
@@ -190,35 +104,152 @@ First identify the site type and confidence level, then build a readable topic c
 If possible, generate a preview URL. Ask me before saving the report.
 ```
 
-### With competitors
+可能得到的结果形式：
 
 ```text
-Use topic-cluster-architect for https://example.com.
-My business is [brief description]. My target audience is [audience]. My main goal is [traffic / leads / sales].
-Competitors: https://competitor1.com, https://competitor2.com, https://competitor3.com
-First diagnose the site type and confidence level, then show competitor topic gaps, priority clusters, and a 90-day roadmap.
-Preview first if possible, then ask whether I want to save the report.
+Preview generated: <preview-url>
 ```
 
-### With existing content inventory
-
-```text
-Use topic-cluster-architect for https://example.com.
-This is a [business type] site targeting [audience]. Goal: [goal].
-Here is my current content inventory: [paste page/category/article list]
-Map the existing assets into a better cluster architecture, tell me what to keep / expand / consolidate / reposition, and include the diagnosis confidence level.
-Ask before saving the report.
-```
-
-## Where users can find the result
-
-After the skill runs, users should look in one of these places:
-- the preview panel or opened preview URL
-- the Claude Code chat response
-- the saved file path returned by Claude after confirmation
-
-If a file is saved, Claude should explicitly tell the user the path, for example:
+或者：
 
 ```text
 Saved report: C:\Users\name\project\topic-cluster-report-2026-04-12.md
 ```
+
+
+## 安装
+
+### 方式一：CLI 安装（推荐）
+
+```bash
+# 添加整个 Skill 仓库
+npx skills add <YOUR_GITHUB_USERNAME>/topic-cluster-architect-skill
+
+# 只安装当前 Skill
+npx skills add <YOUR_GITHUB_USERNAME>/topic-cluster-architect-skill --skill topic-cluster-architect
+```
+
+### 方式二：Claude Code Plugin
+
+```bash
+/plugin marketplace add <YOUR_GITHUB_USERNAME>/topic-cluster-architect-skill
+/plugin install topic-cluster-architect-skill
+```
+
+## 使用方式
+
+### 方式一：直接自然描述需求
+
+适合大多数用户，直接在 `Claude Code` 里说：
+
+```text
+请分析这个网站，并为它设计一套 topic cluster 策略：https://example.com
+```
+
+或者：
+
+```text
+请为我的 SaaS 网站规划 SEO 内容集群。这是网址和 3 个竞品链接，请优先告诉我先做哪些 cluster。
+```
+
+### 方式二：直接调用 Skill
+
+在 `Claude Code` 中运行：
+
+```text
+/topic-cluster-architect
+```
+
+然后补充：
+
+- 网站 URL
+- 一句话业务描述
+- 目标受众
+- 主要目标（流量 / 线索 / 演示 / 销售）
+- 可选竞品 URL
+- 可选现有页面或文章清单
+
+## 示例提示词
+
+### 1）基础版：站点诊断 + cluster 规划
+
+```text
+请使用 topic-cluster-architect 分析 https://example.com。
+先判断网站类型和置信度，再输出一份清晰的 topic cluster 报告，尽量用表格展示。
+如果可以，先生成预览链接；如果要保存文件，先问我。
+```
+
+### 2）带竞品：找主题缺口
+
+```text
+请使用 topic-cluster-architect 分析 https://example.com。
+我的业务是 [一句话描述]，目标受众是 [audience]，主要目标是 [traffic / leads / sales]。
+竞品有：https://competitor1.com, https://competitor2.com, https://competitor3.com
+请先判断站点类型和置信度，再展示竞品主题缺口、优先 cluster，以及一个 90 天执行路线。
+如果可以先预览，再问我要不要保存。
+```
+
+### 3）带内容清单：重构现有内容架构
+
+```text
+请使用 topic-cluster-architect 分析 https://example.com。
+这是一个 [business type] 网站，目标用户是 [audience]，目标是 [goal]。
+以下是我现有的内容清单：[粘贴页面 / 分类页 / 文章列表]
+请把这些内容重新映射到更合理的 cluster 架构里，并告诉我哪些应该保留、扩展、合并或重定位。
+如果要保存报告，先问我。
+```
+
+## 适合谁使用
+
+这个 Skill 特别适合：
+
+- 独立站站长
+- SaaS 团队
+- 电商团队
+- 咨询顾问和代理商
+- SEO Strategist
+- Content Lead
+- 还没有形成内容路线图的创业者
+
+## 建议用户提前准备什么
+
+最少建议提供：
+
+- 网站 URL
+- 一句话业务描述
+- 目标受众
+- 主要目标
+
+如果有这些，输出会更强：
+
+- 2-5 个竞品 URL
+- 当前 service pages / category pages / article list
+- 目标国家或地区
+- 当前已知内容问题或优先事项
+
+## Skill 的核心策略框架
+
+这个 Skill 不是简单吐关键词，而是按一个固定策略流来工作：
+
+1. `Site archetype diagnosis`
+2. `Site maturity assessment`
+3. `Growth goal interpretation`
+4. `Topic universe mapping`
+5. `Competitor gap / content inventory analysis`
+6. `Cluster architecture design`
+7. `Site-type-specific strategic adjustment`
+8. `Expected SEO impact and success conditions`
+9. `New-site strategy`（如适用）
+10. `Preview / save delivery flow`
+
+## 为什么这个 Skill 有价值
+
+很多 SEO 内容规划结果不好用，通常是因为它们：
+
+- 把所有网站都当成同一种内容模型来规划
+- 只给关键词，不给架构
+- 忽略商业模式差异
+- 忽略现有内容资产
+- 输出不够清晰，难以直接执行
+
+这个 Skill 的设计目标，就是解决这些问题。
