@@ -69,15 +69,7 @@ Important:
 
 ## How to use in Claude Code
 
-### Option 1: Ask naturally
-
-Examples:
-- `Analyze this site and build a topic cluster strategy: https://example.com`
-- `Plan SEO content clusters for my SaaS site. Here is the URL and 3 competitors...`
-- `Use topic-cluster-architect for this ecommerce site and tell me what clusters to build first`
-- `Here is my current blog inventory. Rework it into a better topic cluster architecture`
-
-### Option 2: Invoke the skill directly
+### Invoke the skill directly
 
 In `Claude Code`, run:
 
