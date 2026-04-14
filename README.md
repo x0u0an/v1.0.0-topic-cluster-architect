@@ -96,17 +96,16 @@ Saved report: C:\Users\name\project\topic-cluster-report-2026-04-12.md
 
 ```bash
 # 添加整个 Skill 仓库
-npx skills add x0u0an/topic-cluster-architect-skill
+npx skills add x0u0an/v1.0.0-topic-cluster-architect
 
-# 只安装当前 Skill
-npx skills add x0u0an/topic-cluster-architect-skill --skill topic-cluster-architect
-```
+# 或者只安装特定 Skill
+npx skills add x0u0an/v1.0.0-topic-cluster-architect --skill topic-cluster-architect
 
 ### 方式二：Claude Code Plugin
 
 ```bash
-/plugin marketplace add x0u0an/topic-cluster-architect-skill
-/plugin install topic-cluster-architect-skill
+/plugin marketplace add x0u0an/v1.0.0-topic-cluster-architect
+/plugin install v1.0.0-topic-cluster-architect
 ```
 
 ## 使用方式
