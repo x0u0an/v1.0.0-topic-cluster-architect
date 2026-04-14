@@ -24,18 +24,6 @@ npx skills add x0u0an/topic-cluster-architect-skill --skill topic-cluster-archit
 /plugin install topic-cluster-architect-skill
 ```
 
-## 预览展示区
-
-> 截图 / 演示占位区
->
-> 你在 GitHub 仓库发布后，可以把实际截图或一个简短 GIF 放在这里，让整个仓库展示效果更接近公开发布的 Skill 页面。
-
-建议放这些预览内容：
-
-- 完整报告总览截图
-- cluster 架构表格截图
-- 竞品 gap analysis 截图
-- preview URL 或保存结果截图
 
 ## 这个 Skill 会产出什么
 
@@ -136,21 +124,7 @@ npx skills add <YOUR_GITHUB_USERNAME>/topic-cluster-architect-skill --skill topi
 
 ## 使用方式
 
-### 方式一：直接自然描述需求
-
-适合大多数用户，直接在 `Claude Code` 里说：
-
-```text
-请分析这个网站，并为它设计一套 topic cluster 策略：https://example.com
-```
-
-或者：
-
-```text
-请为我的 SaaS 网站规划 SEO 内容集群。这是网址和 3 个竞品链接，请优先告诉我先做哪些 cluster。
-```
-
-### 方式二：直接调用 Skill
+### 直接调用 Skill
 
 在 `Claude Code` 中运行：
 
@@ -197,7 +171,7 @@ npx skills add <YOUR_GITHUB_USERNAME>/topic-cluster-architect-skill --skill topi
 如果要保存报告，先问我。
 ```
 
-## 适合谁使用
+## 适合人群
 
 这个 Skill 特别适合：
 
@@ -250,4 +224,4 @@ npx skills add <YOUR_GITHUB_USERNAME>/topic-cluster-architect-skill --skill topi
 - 忽略现有内容资产
 - 输出不够清晰，难以直接执行
 
-这个 Skill 的设计目标，就是解决这些问题。
+这个 Skill 的设计目标就是解决这些问题。
