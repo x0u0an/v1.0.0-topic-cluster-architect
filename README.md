@@ -10,20 +10,7 @@
 - 可结合现有页面/文章清单做保留、扩展、合并、重定位建议
 - 对新站会补充更聚焦的增长打法
 - 输出可读性较强的结构化报告，适合直接讨论或继续落地
-
-## 快速安装
-
-```bash
-npx skills add x0u0an/topic-cluster-architect-skill --skill topic-cluster-architect
-```
-
-如果你更希望用插件方式安装：
-
-```bash
-/plugin marketplace add x0u0an/topic-cluster-architect-skill
-/plugin install topic-cluster-architect-skill
-```
-
+
 
 ## 这个 Skill 会产出什么
 
