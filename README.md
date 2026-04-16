@@ -1,6 +1,27 @@
-# `topic-cluster-architect`
+# Topic Cluster Architect
 
-一个面向 `Claude Code` 的 SEO 内容策略 Skill。
+> Claude Code skill for designing site-specific SEO topic cluster strategies from site type, maturity, competitors, and existing content.
+
+Generate:
+- pillar pages and supporting content clusters
+- internal linking logic and topic prioritization
+- competitor gap insights
+- a 30/60/90-day execution roadmap
+
+## Quick Start
+
+```bash
+npx skills add x0u0an/topic-cluster-architect
+```
+
+## Then run:
+```text
+/topic-cluster-architect
+```
+
+Provide your site URL, business summary, audience, goal, and optional competitors/content inventory.
+
+# 一个面向 `Claude Code` 的 SEO 内容策略 Skill。
 
 给定网站 URL、业务描述、竞品链接或现有内容清单后，它会先判断站点类型，再输出一份适合该站点商业模式的 `Topic Cluster` 策略报告，而不是只返回一堆分散的关键词。
 
@@ -10,7 +31,8 @@
 - 可结合现有页面/文章清单做保留、扩展、合并、重定位建议
 - 对新站会补充更聚焦的增长打法
 - 输出可读性较强的结构化报告，适合直接讨论或继续落地
-
+
+
 
 ## 这个 Skill 会产出什么
 
@@ -95,17 +117,14 @@ Saved report: C:\Users\name\project\topic-cluster-report-2026-04-12.md
 ### 方式一：CLI 安装（推荐）
 
 ```bash
-# 添加整个 Skill 仓库
-npx skills add x0u0an/v1.0.0-topic-cluster-architect
-
-# 或者只安装特定 Skill
-npx skills add x0u0an/v1.0.0-topic-cluster-architect --skill topic-cluster-architect
+# 安装指定 Skill
+npx skills add x0u0an/topic-cluster-architect --skill topic-cluster-architect
 
 ### 方式二：Claude Code Plugin
 
 ```bash
-/plugin marketplace add x0u0an/v1.0.0-topic-cluster-architect
-/plugin install v1.0.0-topic-cluster-architect
+/plugin marketplace add x0u0an/topic-cluster-architect
+/plugin install topic-cluster-architect
 ```
 
 ## 使用方式
