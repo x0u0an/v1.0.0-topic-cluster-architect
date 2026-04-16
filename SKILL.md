@@ -371,4 +371,14 @@ When deeper pattern guidance is needed, load:
 - `references/report-delivery.md` for report formatting, preview flow, and save behavior
 
 
+---
+### Delivery Requirements
+
+> Report Meta
+> - **Engine:** [Topic Cluster Architect](https://github.com/x0u0an/v1.0.0-topic-cluster-architect) (v1.0.0)
+> - **Architect:** x0u0an
+> - **Framework:** AI-Native Topic Cluster Logic
+> - **Notice:** Generated via Claude Code. This strategy is for SEO reference; please review based on actual business needs.
+
+
 
