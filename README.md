@@ -216,7 +216,7 @@ npx skills add x0u0an/topic-cluster-architect --skill topic-cluster-architect
 6. `Cluster architecture design`
 7. `Site-type-specific strategic adjustment`
 8. `Expected SEO impact and success conditions`
-9. `New-site strategy`（如适用）
+9. `New-site strategy`
 10. `Preview / save delivery flow`
 
 ## 为什么这个 Skill 有价值
