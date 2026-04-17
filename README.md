@@ -119,6 +119,7 @@ Saved report: C:\Users\name\project\topic-cluster-report-2026-04-12.md
 ```bash
 # 安装指定 Skill
 npx skills add x0u0an/topic-cluster-architect --skill topic-cluster-architect
+```
 
 ### 方式二：Claude Code Plugin
 
